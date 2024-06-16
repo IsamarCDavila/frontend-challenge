@@ -1,5 +1,10 @@
+* {
+  /* outline: 1px solid red; */
+}
 .App {
   text-align: center;
+  font-size: 14px;
+  /* font-family: BR Sonoma; */
 }
 
 .App-logo {
@@ -35,4 +40,41 @@
   to {
     transform: rotate(360deg);
   }
+}
+.Home {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.Home .form {
+  width: 25%;
+  text-align: justify;
+  position: relative;
+}
+.Home button.tag {
+  background: linear-gradient(86.01deg, #00F4E2 0%, #00FF7F 100%);
+  padding: 4px 8px 4px 8px;
+  border-radius: 4px;
+  border: none;
+  color: #03050F;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.Font-12 {
+  font-size: 12px;
+  align-items: center;
+}
+.Left-blur, .Right-blur{
+  position: absolute;
+}
+.Left-blur {
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.Right-blur{
+  right: 0;
+  top: 0;
+  /* z-index: -1; */
 }
