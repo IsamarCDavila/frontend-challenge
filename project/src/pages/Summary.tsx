@@ -7,12 +7,15 @@ import './Summary.scss';
 interface LocationState {
   user: User;
   plan: Plan;
+  selectedOption: string;
 }
 
 const Summary: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState;
+  console.log('location.state', location.state);
+  console.log('STATE', state);
 
   if (!state) {
     // Si no hay state, redirigir a la página principal
@@ -20,19 +23,34 @@ const Summary: React.FC = () => {
     return null;
   }
 
-  const { user, plan } = state;
+  const { user, plan, selectedOption  } = state;
+  
+  const handleBack = () => {
+    navigate('/plans', { state: { user, selectedOption } });
+    // navigate(-1);
+  };
+
+  
 
   return (
     <div className="summary-container">
+      <nav className="breadcrumb">
+        <span className="breadcrumb-step">1</span>
+        <span>Planes y coberturas</span>
+        <span className="breadcrumb-separator">···</span>
+        <span className="breadcrumb-step active">2</span>
+        <span>Resumen</span>
+      </nav>
+      <button onClick={handleBack} className="back-button">Volver</button>
       <h2>Resumen del seguro</h2>
       <div className="summary-details">
-        <p><strong>Precios calculados para:</strong> {user.name}</p>
+        <p><strong>Precios calculados para:</strong> {user.name} {user.lastName}</p>
         <p><strong>Responsable de pago:</strong></p>
-        <p>DNI: {user.dni}</p>
+        <p>{user.documentType}: {user.documentNumber}</p>
         <p>Celular: {user.phone}</p>
         <p><strong>Plan elegido:</strong></p>
         <p>{plan.name}</p>
-        <p>Costo del Plan: {plan.price}</p>
+        <p>Costo del Plan: {`$${plan.price} al mes`}</p>
       </div>
     </div>
   );

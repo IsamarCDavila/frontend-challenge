@@ -20,5 +20,42 @@
         }
       }
     }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    
+      .breadcrumb-step {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: #000;
+        margin-right: 0.5rem;
+    
+        &.active {
+          background-color: #007bff;
+          color: #fff;
+        }
+      }
+    
+      .breadcrumb-separator {
+        margin: 0 0.5rem;
+      }
+    }
+    
+    .back-button {
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
   }
   

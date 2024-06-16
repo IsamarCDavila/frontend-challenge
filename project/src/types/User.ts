@@ -1,8 +1,11 @@
 export interface User {
     id: number;
     name: string;
+    lastName: string;
+    birthDay: string;
     email: string;
     phone: string;
-    dni: string;
+    documentNumber: string;
+    documentType: string;
   }
   
