@@ -3,6 +3,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { User } from '../types/User';
 import { Plan } from '../types/Plan';
+import iconUser from '../images/IcAddUserLight.svg'
+import iconProtection from '../images/IcProtectionLight.svg'
+import IcHospitalLight from '../images/IcHospitalLight.svg'
+import IcHomeLight from '../images/IcHomeLight.svg'
 import './Plans.scss';
 
 // interface Plan {
@@ -107,16 +111,19 @@ const Plans: React.FC = () => {
     <div className="plans-container">
       <nav className="breadcrumb">
         <span className="breadcrumb-step active">1</span>
-        <span>Planes y coberturas</span>
-        <span className="breadcrumb-separator">···</span>
+        <span className="breadcrumb-step-plans step-text-active">Planes y coberturas</span>
+        <span className="breadcrumb-separator">····</span>
         <span className="breadcrumb-step">2</span>
-        <span>Resumen</span>
+        <span className="breadcrumb-step-summary step-text">Resumen</span>
       </nav>
-      <button onClick={handleBack} className="back-button">Volver</button>
+      <button onClick={handleBack} className="back-button"> <i className="fa fa-chevron-circle-left"></i> Volver</button>
       <h2>Rocío ¿Para quién deseas cotizar?</h2>
-      <p>Selecciona la opción que se ajuste más a tus necesidades </p>
+      <p className='message'>Selecciona la opción que se ajuste más a tus necesidades </p>
       <div className="options">
-        <label>
+        <label className='Card'>
+          <img src={iconUser} className="Icon-User" alt="iconUser" />
+          Para mí
+          <p>Cotiza tu seguro de salud y agrega familiares si así lo deseas.</p>
           <input
             type="radio"
             name="planOption"
@@ -124,9 +131,12 @@ const Plans: React.FC = () => {
             checked={selectedOption === 'self'}
             onChange={() => handleOptionChange('self')}
           />
-          Para mí
+          
         </label>
-        <label>
+        <label className='Card'>
+          <img src={iconProtection} className="Icon-Protection" alt="iconProtection" />
+          Para alguien más
+          <p>Realiza una cotización para uno de tus familiares o cualquier persona.</p>
           <input
             type="radio"
             name="planOption"
@@ -134,7 +144,6 @@ const Plans: React.FC = () => {
             checked={selectedOption === 'other'}
             onChange={() => handleOptionChange('other')}
           />
-          Para alguien más
         </label>
       </div>
       {selectedOption && (
@@ -142,8 +151,10 @@ const Plans: React.FC = () => {
           {plans.map((plan) => (
             <div key={plan.id} className={`plan ${selectedOption === plan.name ? 'selected' : ''}`}>
               <h3>{plan.name}</h3>
+              <img src={IcHomeLight} className="IcHome-Light" alt="IcHomeLight" />
               <label htmlFor=""> COSTO DEL PLAN</label>
               <p> {selectedOption === 'other' ? `$${getDiscountedCost(plan.price, 5)} al mes` : `$${plan.price} al mes`}</p>
+              <hr/>
               <ul>
                 {plan.description.map((description) => (
                   <li>{description}</li>

@@ -36,12 +36,12 @@ const Summary: React.FC = () => {
     <div className="summary-container">
       <nav className="breadcrumb">
         <span className="breadcrumb-step">1</span>
-        <span>Planes y coberturas</span>
-        <span className="breadcrumb-separator">···</span>
+        <span className="breadcrumb-step-plans step-text">Planes y coberturas</span>
+        <span className="breadcrumb-separator">····</span>
         <span className="breadcrumb-step active">2</span>
-        <span>Resumen</span>
+        <span className="breadcrumb-step-summary step-text-active">Resumen</span>
       </nav>
-      <button onClick={handleBack} className="back-button">Volver</button>
+      <button onClick={handleBack} className="back-button"><i className="fa fa-chevron-circle-left"></i> Volver</button>
       <h2>Resumen del seguro</h2>
       <div className="summary-details">
         <p><strong>Precios calculados para:</strong> {user.name} {user.lastName}</p>

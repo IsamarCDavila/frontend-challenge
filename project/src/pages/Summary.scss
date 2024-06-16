@@ -24,6 +24,9 @@
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
+      padding: 16px 0px 16px 0px;
+      background: #EDEFFC;
+      justify-content: center;
     
       .breadcrumb-step {
         display: inline-flex;
@@ -32,30 +35,46 @@
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        background-color: #e0e0e0;
-        color: #000;
+        background-color: #7981B2;
+        color: #fff;
+        // background-color: transparent;
+        // color: #7981B2;
+        // border-color: #7981B2;
         margin-right: 0.5rem;
     
         &.active {
-          background-color: #007bff;
+          background-color: #4F4FFF;
           color: #fff;
         }
       }
-    
+      .step-text {
+        color: #7981B2;
+      }
+      .step-text-active {
+        color: #141938;
+        font-weight: 700;
+      }
       .breadcrumb-separator {
         margin: 0 0.5rem;
+        color: #4F4FFF;
+        font-size: x-large;
       }
     }
     
     .back-button {
       margin-bottom: 1rem;
       padding: 0.5rem 1rem;
-      background-color: #007bff;
-      color: #fff;
+      background-color: transparent;
+      color: #4F4FFF;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-    }
+      display: flex;
+      font-size: 18px;
+      i {
+        margin-right: 5px;
+      }
+  }
     
   }
   
