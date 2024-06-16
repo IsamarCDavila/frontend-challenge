@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import heroImg from '../images/hero.svg';
 import leftBlur from '../images/blur-asset-violet.svg';
 import rightBlur from '../images/blur-asset-green.svg';
+import './Home.scss';
 
 
 const Home: React.FC = () => {
@@ -21,7 +22,9 @@ const Home: React.FC = () => {
                 <Form />
             </div>
         </div>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
     </div>
     
   );

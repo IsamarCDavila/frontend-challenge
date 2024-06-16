@@ -108,7 +108,7 @@ const Plans: React.FC = () => {
   };
 
   return (
-    <div className="plans-container">
+    <div >
       <nav className="breadcrumb">
         <span className="breadcrumb-step active">1</span>
         <span className="breadcrumb-step-plans step-text-active">Planes y coberturas</span>
@@ -116,6 +116,7 @@ const Plans: React.FC = () => {
         <span className="breadcrumb-step">2</span>
         <span className="breadcrumb-step-summary step-text">Resumen</span>
       </nav>
+      <div className="plans-container">
       <button onClick={handleBack} className="back-button"> <i className="fa fa-chevron-circle-left"></i> Volver</button>
       <h2>Rocío ¿Para quién deseas cotizar?</h2>
       <p className='message'>Selecciona la opción que se ajuste más a tus necesidades </p>
@@ -153,19 +154,23 @@ const Plans: React.FC = () => {
               <h3>{plan.name}</h3>
               <img src={IcHomeLight} className="IcHome-Light" alt="IcHomeLight" />
               <label htmlFor=""> COSTO DEL PLAN</label>
-              <p> {selectedOption === 'other' ? `$${getDiscountedCost(plan.price, 5)} al mes` : `$${plan.price} al mes`}</p>
+              <p className='price-text'> {selectedOption === 'other' ? `$${getDiscountedCost(plan.price, 5)} al mes` : `$${plan.price} al mes`}</p>
               <hr/>
               <ul>
                 {plan.description.map((description) => (
                   <li>{description}</li>
                 ))}
               </ul>
-              <button onClick={() => handleSelectPlan(plan)}>Seleccionar Plan</button>
+              <div className='container-button'>
+                <button onClick={() => handleSelectPlan(plan)}>Seleccionar Plan</button>
+              </div>
+              
               {/* <p>{plan.description}</p> */}
             </div>
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 };

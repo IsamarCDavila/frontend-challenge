@@ -1,0 +1,29 @@
+$small: 300px;
+$medium: 900px;
+
+.Home {
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        justify-content: center;
+    }
+    .Hero-img {
+        @media screen and (min-width: $small) and (max-width: $medium) {
+            display: none;
+        }
+    }
+    .form {
+        @media screen and (min-width: $small) and (max-width: $medium) {
+            width: 90%;
+        }
+    }
+}
+.Right-blur,  .Left-blur{
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        width: 30%;
+    }
+}
+.Left-blur{
+    @media screen and (min-width: $small) and (max-width: $medium) {
+        top: auto;
+        bottom: 0;
+    }
+}

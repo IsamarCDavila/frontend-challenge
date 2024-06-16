@@ -1,16 +1,28 @@
 $small: 300px;
 $medium: 900px;
 
+
 .plans-container {
-    padding: 1rem;
+    // padding: 1rem;
+    padding: 1rem 10rem;
+    @media screen and (min-width: $small) and (max-width: $medium) {
+      padding: 1rem;
+    }
     h2 {
       color: #141938;
       font-weight: 700;
       font-size : 40px;
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        font-size: 28px;
+        text-align: left;
+      }
     }
     .message{
       color: #141938;
       font-size: 16px;
+      @media screen and (min-width: $small) and (max-width: $medium) {
+        text-align: left;
+      }
     }
     .options {
       display: flex;
@@ -32,6 +44,7 @@ $medium: 900px;
         border-radius: 24px;
         width: 256px;
         position: relative;
+        font-size: 20px;
         @media screen and (min-width: $small) and (max-width: $medium) {
           width: 100%;
         }
@@ -43,6 +56,7 @@ $medium: 900px;
         }
         p {
           font-weight: initial;
+          font-size: 12px;
         }
       }
       // @media screen and (max-width: $small) {
@@ -60,31 +74,52 @@ $medium: 900px;
       gap: 1rem;
       @media screen and (min-width: $small) and (max-width: $medium) {
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .plan {
-        padding: 1rem;
+        padding: 1.5rem;
         // border: 1px solid #ccc;
         box-shadow: 0px 1px 32px 0px #AEACF359;
         border-radius: 24px;
         text-align: left;
         position: relative;
+        width: 30%;
+        @media screen and (min-width: $small) and (max-width: $medium) {
+          width: 100%;
+          
+        }
         h3 {
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
+          font-size: 24px;
+          width: 60%;
+        }
+        .container-button {
+          height: 50px;
+          display: flex;
+          justify-content: center;
         }
         button {
           background: #FF1C44;
           padding: 14px 32px 14px 32px;
           color: #fff;
           width: 224px;
+          width: 80%;
           font-size: 18px;
           border-radius: 32px;
           border: none;
           text-align: center !important;
+          position: absolute;
+          bottom: 1.5rem;
         }
         ul {
           padding: 16px !important;
+          li {
+            font-size: 16px;
+            color: #141938;
+          }
         }
+        
         hr {
           border: 1px solid #D7DBF5;
         }
@@ -93,48 +128,20 @@ $medium: 900px;
           right: 10%;
           top: 10%;
         }
+        label {
+          color: #7981B2;
+          font-size: 12px;
+          font-weight: 900;
+        }
+        .price-text {
+          color: #141938;
+          font-weight: 900;
+          font-size: 20px;
+          margin-top: 0;
+        }
       }
     }
-    .breadcrumb {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding: 16px 0px 16px 0px;
-        background: #EDEFFC;
-        justify-content: center;
-      
-        .breadcrumb-step {
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: #7981B2;
-          color: #fff;
-          // background-color: transparent;
-          // color: #7981B2;
-          // border-color: #7981B2;
-          margin-right: 0.5rem;
-      
-          &.active {
-            background-color: #4F4FFF;
-            color: #fff;
-          }
-        }
-        .step-text {
-          color: #7981B2;
-        }
-        .step-text-active {
-          color: #141938;
-          font-weight: 700;
-        }
-        .breadcrumb-separator {
-          margin: 0 0.5rem;
-          color: #4F4FFF;
-          font-size: x-large;
-        }
-      }
+    
       
       .back-button {
         margin-bottom: 1rem;
@@ -146,9 +153,51 @@ $medium: 900px;
         cursor: pointer;
         display: flex;
         font-size: 18px;
+        @media screen and (min-width: $small) and (max-width: $medium) {
+          display: none;
+        }
         i {
           margin-right: 5px;
         }
       }
   }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 16px 0px 16px 0px;
+    background: #EDEFFC;
+    justify-content: center;
   
+    .breadcrumb-step {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #7981B2;
+      color: #fff;
+      // background-color: transparent;
+      // color: #7981B2;
+      // border-color: #7981B2;
+      margin-right: 0.5rem;
+  
+      &.active {
+        background-color: #4F4FFF;
+        color: #fff;
+      }
+    }
+    .step-text {
+      color: #7981B2;
+    }
+    .step-text-active {
+      color: #141938;
+      font-weight: 700;
+    }
+    .breadcrumb-separator {
+      margin: 0 0.5rem;
+      color: #4F4FFF;
+      font-size: x-large;
+    }
+  }

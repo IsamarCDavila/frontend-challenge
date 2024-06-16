@@ -1,9 +1,14 @@
+$small: 300px;
+$medium: 900px;
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 10rem;
     margin-bottom: 30px;
+    @media screen and (min-width: $small) and (max-width: $medium) {
+      padding: 1rem;
+    }
   
     &.light {
       background-color: #fff;
@@ -29,6 +34,9 @@
   
       span {
         font-size: 0.875rem;
+        @media screen and (min-width: $small) and (max-width: $medium) {
+          display: none;
+        }
       }
   
       a {

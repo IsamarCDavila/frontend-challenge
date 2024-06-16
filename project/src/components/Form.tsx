@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import './Form.scss';
+import heroImg from '../images/hero.svg';
 
 interface FormData {
   documentType: string;
@@ -62,6 +63,8 @@ const Form: React.FC = () => {
     <form onSubmit={handleSubmit}>
         <h2>Creado para ti y tu familia</h2>
         <p>Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.</p>
+        <img src={heroImg} className="Hero-img-form" alt="Hero-img" />
+        <hr />
         <label className='field'>
             {/* Tipo de documento */}
             <select name="documentType" value={formData.documentType} onChange={handleChange} required>
